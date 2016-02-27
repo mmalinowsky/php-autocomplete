@@ -1,0 +1,13 @@
+{
+    "name": "phaniso/autocomplete",
+      "authors": [
+        {
+            "name": "phaniso"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Autocomplete\\": "src/Autocomplete"
+        }
+    }
+}
