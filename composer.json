@@ -1,5 +1,7 @@
 {
     "name": "phaniso/autocomplete",
+    "keywords" : "autocomplete, trie, search, prefix tree",
+    "license" : "GPL-2.0",
       "authors": [
         {
             "name": "phaniso"
