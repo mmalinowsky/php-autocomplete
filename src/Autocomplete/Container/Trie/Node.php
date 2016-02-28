@@ -42,8 +42,8 @@ class Node implements NodeInterface
     {
         $child = $this;
         $prefix = str_split($prefix);
-        foreach($prefix as $char) {
-            if($child) {
+        foreach ($prefix as $char) {
+            if ($child) {
                 $child = $child->getChild($char);
             }
         }
@@ -52,10 +52,10 @@ class Node implements NodeInterface
 
     public function getPostfix($prefix, $postFixes = [])
     {
-        if($this->endNode) {
+        if ($this->endNode) {
             $postFixes[] = $this->endNode;
         }
-        foreach($this->children as $child) {
+        foreach ($this->children as $child) {
             $postFixes = $child->getPostfix($prefix, $postFixes);
         }
         return $postFixes;

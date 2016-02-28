@@ -20,12 +20,12 @@ class ContainerFactory
     public function build($name, $args = [])
     {
         $className = $this->namespace.$name.'\\'.$name;
-        if( ! class_exists($className)) {
+        if ( ! class_exists($className)) {
             throw new \Exception('Class: '.$className.' not found.');
         }
         $container = new \ReflectionClass($className);
         $container = $container->newInstanceArgs($args);
-        if( ! $container instanceof ContainerInterface) {
+        if ( ! $container instanceof ContainerInterface) {
             throw new \Exception('Bad container implementation');
         }
         return $container;

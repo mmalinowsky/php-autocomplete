@@ -26,7 +26,7 @@ class Trie implements ContainerInterface
 
     private function inputParse(&$input)
     {
-        if( ! $this->caseSensitive) {
+        if ( ! $this->caseSensitive) {
             $input = strtolower($input);
         }
     }
@@ -48,7 +48,7 @@ class Trie implements ContainerInterface
     {
         $this->inputParse($prefix);
         $child = $this->root->getClosest($prefix);
-         if( ! $child) {
+        if ( ! $child) {
             return [];
         }
         $postFixes = $child->getPostfix($prefix);
