@@ -8,7 +8,7 @@ interface NodeInterface
      * Get Child
      *
      * @param string $value
-     * @return Node
+     * @return Node|boolean
      */
     public function getChild($value);
     /**
@@ -29,7 +29,7 @@ interface NodeInterface
      * Add new node
      *
      * @param  string $name
-     * @return Node
+     * @return Node|boolean
      */
     public function addChild($name);
     /**

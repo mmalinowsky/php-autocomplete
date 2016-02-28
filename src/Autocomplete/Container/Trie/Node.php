@@ -15,7 +15,7 @@ class Node implements NodeInterface
     /**
      * @var Node
      */
-    private $children;
+    private $children = [];
     /**
      * boolean|string
      */
@@ -24,7 +24,6 @@ class Node implements NodeInterface
     public function __construct($value)
     {
         $this->value = $value;
-        $this->children = [];
         $this->endNode = false;
     }
 
