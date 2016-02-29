@@ -8,8 +8,9 @@ Autocomplete PHP library that utilize trie data structure.
 
 
 ###Installation
+```
 composer require phaniso/autocomplete
-
+```
 ###How to use
 1. Build container
 ```
