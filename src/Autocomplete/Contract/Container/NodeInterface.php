@@ -29,16 +29,15 @@ interface NodeInterface
      * Add new node
      *
      * @param  string $name
-     * @return Node|boolean
+     * @return Node
      */
     public function addChild($name);
     /**
      * Add suffix
      *
      * @param array $suffix
-     * @param string $word
      */
-    public function addSuffix($suffix, $word);
+    public function addSuffix($suffix);
     /**
      * Check if node has word
      *
@@ -53,4 +52,7 @@ interface NodeInterface
      * @return boolean
      */
     public function hasPrefix($prefix);
+
+    public function getEndNode();
+    public function setEndNode($value);
 }

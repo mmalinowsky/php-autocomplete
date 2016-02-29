@@ -11,7 +11,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $word = 'test';
         $trieNode = new Node('');
         $wordArr = str_split($word);
-        $trieNode->addSuffix($wordArr, $word);
+        $trieNode->addSuffix($wordArr);
         $children = $this->getChildrenProperty($trieNode);
         $hasWord = $trieNode->hasWord($wordArr);
         $this->assertSame(count($children), 1);
@@ -33,7 +33,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $word = 'test';
         $trieNode = new Node('');
         $wordArr = str_split($word);
-        $trieNode->addSuffix($wordArr, $word);
+        $trieNode->addSuffix($wordArr);
         $hasSuffix = $trieNode->hasPrefix(str_split(substr($word, 0, 3)));
         $this->assertTrue($hasSuffix);
     }

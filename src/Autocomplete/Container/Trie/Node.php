@@ -27,6 +27,16 @@ class Node implements NodeInterface
         $this->endNode = false;
     }
 
+    public function getEndNode()
+    {
+        return $this->endNode;
+    }
+
+    public function setEndNode($value)
+    {
+        $this->endNode = $value;
+    }
+
     public function getChild($string)
     {
         foreach ($this->children as $child) {
@@ -70,44 +80,22 @@ class Node implements NodeInterface
         return $child;
     }
 
-    public function addSuffix($suffix, $word)
+    public function addSuffix($suffix)
     {
-         if (count($suffix) < 1) {
-            $this->endNode = $word;
-            return true;
-        }
-        $char = array_shift($suffix);
-        $child = $this->getChild($char);
-        if ( ! $child) {
-            $child = $this->addChild($char);
-        }
-        $child->addSuffix($suffix, $word);
+        $method = new Method\AddSuffix;
+        return $method->execute($suffix, $this);
     }
 
     public function hasWord($word)
     {
-        if (count($word) < 1) {
-            return $this->endNode ? true : false;
-        }
-        $char = array_shift($word);
-        $child = $this->getChild($char);
-        if ( ! $child) {
-            return false;
-        }
-        return $child->hasWord($word);
+        $method = new Method\HasWord;
+        return $method->execute($word, $this);
     }
 
     public function hasPrefix($prefix)
     {
-        if (count($prefix) < 1) {
-            return true;
-        }
-        $char = array_shift($prefix);
-        $child = $this->getChild($char);
-        if ( ! $child) {
-            return false;
-        }
-        return $child->hasPrefix($prefix);
+        $method = new Method\HasPrefix;
+        return $method->execute($prefix, $this);
     }
 
     public function graph(array &$arr, $level = 0)

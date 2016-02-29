@@ -34,7 +34,7 @@ class Trie implements ContainerInterface
     public function addWord($word)
     {
         $this->inputParse($word);
-        $this->root->addSuffix(str_split($word), $word);
+        $this->root->addSuffix(str_split($word));
     }
 
     public function hasPrefix($prefix)
