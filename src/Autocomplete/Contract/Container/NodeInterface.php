@@ -36,7 +36,7 @@ interface NodeInterface
      * Add suffix
      *
      * @param array $suffix
-     * @return Node|boolean
+     * @return boolean
      */
     public function addSuffix($suffix);
     /**
