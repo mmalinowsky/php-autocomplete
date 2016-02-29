@@ -8,14 +8,14 @@ abstract class Template
     public $child;
     public $word;
 
-    public final function execute($string, &$child)
+    final public function execute($string, &$child)
     {
        $this->word = (join($string));
        $this->child = $child;
        return $this->algorithm($string, $child);
     }
 
-    public final function algorithm($string)
+    final public function algorithm($string)
     {
         if (count($string) < 1) {
             return $this->ifStringEnd();
@@ -30,7 +30,7 @@ abstract class Template
                 return $ret['returnValue'];
             }
         }
-        return $this->algorithm($string, $this->child);
+        return $this->algorithm($string);
     }
 
     abstract public function ifStringEnd();

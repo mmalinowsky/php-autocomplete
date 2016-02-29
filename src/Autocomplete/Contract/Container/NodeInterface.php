@@ -29,13 +29,14 @@ interface NodeInterface
      * Add new node
      *
      * @param  string $name
-     * @return Node
+     * @return Node|boolean
      */
     public function addChild($name);
     /**
      * Add suffix
      *
      * @param array $suffix
+     * @return Node|boolean
      */
     public function addSuffix($suffix);
     /**
@@ -52,7 +53,16 @@ interface NodeInterface
      * @return boolean
      */
     public function hasPrefix($prefix);
-
+    /**
+     * Get endnode
+     *
+     * @return string|boolean
+     */
     public function getEndNode();
+    /**
+     *
+     * Set endnode
+     * @param mixed $value
+     */
     public function setEndNode($value);
 }
