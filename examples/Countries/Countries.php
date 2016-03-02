@@ -18,8 +18,8 @@ function loadWords(&$trie) {
 }
 
 loadWords($trie);
-
-$countryInput = $_GET['key'];
+$key = isset($_GET['key']) ? $_GET['key'] : '';
+$countryInput = $key;
 $countries = $trie->getByPrefix($countryInput);
 
 echo json_encode($countries);
